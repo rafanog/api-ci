@@ -30,7 +30,7 @@ const getToken = function(clientId, clientSecret) {
 }
 
 describe('Request without authorization header field', function() {
-  it('GET /api/public return 200 OK', function(done) {
+  it('GET /api/public return 200 OK', done => {
     chai.request(apiURL)
     .get('/api/public')
     /*.end(function(err, res) {
