@@ -29,6 +29,18 @@ const getToken = function(clientId, clientSecret) {
     .send(tokenRequestBody)
 }
 
+describe('Request without authorization header field', () => {
+    return chai.request(apiURL)
+        .get('/api/public')
+        .then(res => {
+            res.should.have.status(200);
+        })
+        .catch(err => {
+            throw err;
+        });
+});
+
+/*
 describe('Request without authorization header field', function() {
   it('GET /api/public return 200 OK', function(done) {
     chai.request(apiURL)
@@ -39,7 +51,7 @@ describe('Request without authorization header field', function() {
       done();
     });
   });
-/*
+
   it('GET /api/private return 401 Unauthorized', function(done) {
     chai.request(apiURL)
     .get('/api/private')
@@ -57,7 +69,7 @@ describe('Request without authorization header field', function() {
       done();
     });
   });
-  */
+  
 });
 /*
 describe('Request with authorization header field', function() {
