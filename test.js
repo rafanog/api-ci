@@ -40,6 +40,7 @@ describe('Request without authorization header field', function() {
     });*/
     .end((err, res) => {
       //console.log(res);
+      if (err) return done(err);
       res.should.have.to.be.json;
       res.should.have.status(200);
       done();
