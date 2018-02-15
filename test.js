@@ -39,7 +39,7 @@ describe('Request without authorization header field', function() {
       done();
     });
   });
-
+/*
   it('GET /api/private return 401 Unauthorized', function(done) {
     chai.request(apiURL)
     .get('/api/private')
@@ -57,8 +57,9 @@ describe('Request without authorization header field', function() {
       done();
     });
   });
+  */
 });
-
+/*
 describe('Request with authorization header field', function() {
   context('Authorization header field with value \'Bearer \'', function() {
     it('GET /api/private return 401 Unauthorized', function(done) {
@@ -308,3 +309,4 @@ describe('Request with authorization header field', function() {
     });
   });
 });
+*/
