@@ -33,7 +33,13 @@ describe('Request without authorization header field', function() {
   it('GET /api/public return 200 OK', function(done) {
     chai.request(apiURL)
     .get('/api/public')
-    .end(function(err, res) {
+    /*.end(function(err, res) {
+      res.should.have.to.be.json;
+      res.should.have.status(200);
+      done();
+    });*/
+    .end((err, res) => {
+      //console.log(res);
       res.should.have.to.be.json;
       res.should.have.status(200);
       done();
