@@ -33,9 +33,11 @@ describe('Request without authorization header field', () => {
     return chai.request(apiURL)
         .get('/api/public')
         .then(res => {
+            res.should.have.to.be.json;
             res.should.have.status(200);
         })
         .catch(err => {
+            console.log(err);
             throw err;
         });
 });
