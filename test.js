@@ -29,6 +29,8 @@ const getToken = function(clientId, clientSecret) {
     .send(tokenRequestBody)
 }
 
+console.log(apiURL);
+
 describe('Request without authorization header', function() {
     it('GET /api/public return 200 OK', function(done) {
        return chai.request(apiURL)
