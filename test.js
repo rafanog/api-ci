@@ -38,5 +38,6 @@ describe('Request without authorization header field', function() {
       res.should.have.status(200);
       //done();
     });
+    done();
   });
 });
