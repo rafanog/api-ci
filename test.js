@@ -37,5 +37,6 @@ describe('Request without authorization header field', function() {
       res.should.have.to.be.json;
       res.should.have.status(404);
     });
+      //
   });
 });
