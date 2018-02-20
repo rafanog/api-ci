@@ -7,7 +7,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "check": "mocha --timeout 15000",
-    "test": "npm-run-all --paralel start check"
+    "test": "npm-run-all --parallel start check"
   },
   "author": "Auth0",
   "license": "MIT",
