@@ -43,5 +43,6 @@ describe('Request without authorization header', function() {
                 console.error(err);
                 throw err;
             });
+        done();
     });
 });
