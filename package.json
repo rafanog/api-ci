@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "check": "mocha --timeout 15000",
-    "test": "npm-run-all --parallel start check"
+    "test": "mocha --timeout 15000"
   },
   "author": "Auth0",
   "license": "MIT",
@@ -17,8 +16,7 @@
     "express": "^4.14.0",
     "express-jwt": "^5.1.0",
     "express-jwt-authz": "^1.0.0",
-    "jwks-rsa": "^1.1.1",
-    "npm-run-all": "^4.0.2"
+    "jwks-rsa": "^1.1.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
