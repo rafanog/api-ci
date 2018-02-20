@@ -31,8 +31,8 @@ jobs:
       - run: 
           name: test
           command: npm test
-   deployment:
+  deployment:
     staging:
       branch: master
       heroku:
-        appname: foo-bar-123   
+        appname: prueba-circleci
