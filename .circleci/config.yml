@@ -28,12 +28,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       
-      - deployment:
-          staging:
-            branch: master
-            heroku:
-              appname: prueba-circleci
-      
       - run: 
           name: test
           command: npm test
