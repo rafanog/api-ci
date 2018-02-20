@@ -29,21 +29,14 @@ const getToken = function(clientId, clientSecret) {
     .send(tokenRequestBody)
 }
 
-//console.log(apiURL);
-
-describe('Request without authorization header', function() {
-    it('GET /api/public return 200 OK', function(done) {
-       return chai.request(apiURL)
-            .get('/api/public')
-            .then(res => {
-                res.should.have.to.be.json;
-                res.should.have.status(200);
-                done();
-            })
-            .catch(err => {
-                console.error(err);
-                throw err;
-                done();
-            });
+describe('Request without authorization header field', function() {
+  it('GET /api/public return 200 OK', function(done) {
+    chai.request(apiURL)
+    .get('/api/public')
+    .end(function(err, res) {
+      res.should.have.to.be.json;
+      res.should.have.status(200);
+      done();
     });
+  });
 });
