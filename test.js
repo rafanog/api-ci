@@ -42,7 +42,7 @@ describe('Request without authorization header', function() {
             .catch(err => {
                 console.error(err);
                 throw err;
+                done();
             });
-        done();
     });
 });
