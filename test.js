@@ -38,6 +38,7 @@ describe('Request without authorization header', function() {
             .then(res => {
                 res.should.have.to.be.json;
                 res.should.have.status(200);
+                done();
             })
             .catch(err => {
                 console.error(err);
