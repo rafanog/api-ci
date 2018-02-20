@@ -27,14 +27,14 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-          
-      - run: 
-          name: test
-          command: npm test
-          
-     deployment:
+      
+      - deployment:
           staging:
             branch: master
             heroku:
-              appname: prueba
-        
+              appname: prueba-circleci
+      
+      - run: 
+          name: test
+          command: npm test
+      
