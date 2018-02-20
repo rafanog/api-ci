@@ -28,13 +28,13 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
           
-      - deployment:
+      - run: 
+          name: test
+          command: npm test
+          
+     deployment:
           staging:
             branch: master
             heroku:
               appname: prueba
-      
-      - run: 
-          name: test
-          command: npm test
         
