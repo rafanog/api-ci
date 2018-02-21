@@ -4,8 +4,7 @@ machine:
 
 test:
   override:
-    docker run auth0-express-api-rs256
-    curl --retry 10 --retry-delay 5 -v http://localhost:3010
+    docker run auth0-express-api-rs256 npm test
 
 deployment:
   staging:
