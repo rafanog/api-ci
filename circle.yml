@@ -10,7 +10,7 @@ dependencies:
 test:
   override:
     - docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256
-    - curl --retry 10 --retry-delay 5 -v http://localhost:3010/api/public
+    - npm test
 
  #deployment:
   #hub:
