@@ -1,11 +1,3 @@
-machine:
-  services:
-    docker
-
-test:
-  override:
-    docker run auth0-express-api-rs256 npm test
-
 deployment:
   staging:
     branch: master
