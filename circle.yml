@@ -5,7 +5,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build  auth0-express-api-rs256 . --rm=false
+    - docker build -t auth0-express-api-rs256 . --rm=false
 
 test:
   override:
