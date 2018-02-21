@@ -1,8 +1,6 @@
 machine:
   services:
     - docker
-  working_directory: ~/home/app
-
 
 dependencies:
   override:
