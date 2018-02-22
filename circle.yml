@@ -1,6 +1,7 @@
 machine:
   services:
     - docker
+      background: true
 
 dependencies:
   override:
@@ -9,9 +10,7 @@ dependencies:
 
 test:
   override:
-    - server:
-         background: true
-         docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256 npm start
+    - docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256 npm start
     #    background: true
     - sleep 5
     - npm test
