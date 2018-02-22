@@ -9,7 +9,7 @@ dependencies:
 
 test:
   override:
-    - docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256 npm start:
-        background: true
-    - sleep 5
-    - npm test
+    - docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256 npm start
+    #    background: true
+    #- sleep 5
+    #- npm test
