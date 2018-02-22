@@ -9,9 +9,8 @@ dependencies:
 
 test:
   override:
-    #- docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256:
-    - prueba: 
-        background: true
+    - docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256
+          background: true
     - sleep 5
     #- npm test
     - curl -i http://localhost:3010/api/public
