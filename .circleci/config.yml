@@ -26,11 +26,11 @@ jobs:
           command: npm start
           background: true
           
-      - run:
-          shell: /bin/sh
-          command: wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 10 http://localhost:3010/graphql
+      #- run:
+      #    shell: /bin/sh
+      #    command: wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 10 http://localhost:3010/graphql
             
       
       - run: 
           name: test
-          command: npm test
+          command: curl -i http://localhost:3010/api/public
