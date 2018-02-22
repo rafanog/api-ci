@@ -11,6 +11,7 @@ test:
   override:
     #- docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256:
     - prueba:
+        docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256
         background: true
     - sleep 5
     #- npm test
