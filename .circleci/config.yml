@@ -28,7 +28,7 @@ jobs:
           
       - run:
           name: inspection
-          command: ps aux
+          command: ps -e
             
       - run: 
           name: test
