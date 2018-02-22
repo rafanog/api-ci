@@ -33,4 +33,4 @@ jobs:
             
       - run: 
           name: test
-          command: curl -i http://localhost:3010/api/public
+          command: npm test
