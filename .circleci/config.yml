@@ -25,5 +25,5 @@ jobs:
           name: background server for tests
           command: npm start
           background: true
-      - sleep 7
+      #- sleep 7
       - run: npm test
