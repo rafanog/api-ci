@@ -15,7 +15,7 @@ jobs:
             echo "AUTH0_AUDIENCE=$audience" >> .env
          
       - run:
-          name: Execute dockerized version
-          command: sh exec.sh
-          #background: true
+          name: Build docker image
+          command: docker build -t auth0-express-api-rs256 .
+          
       
