@@ -12,7 +12,7 @@ jobs:
           name: Prepare .env variables for server
           command: |
             echo "AUTH0_DOMAIN=$domain" >> .env
-            echo "AUTH_AUDIENCE=$audience" >> .env
+            echo "AUTH0_AUDIENCE=$audience" >> .env
          
       - run:
           name: Execute dockerized version
