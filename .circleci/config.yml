@@ -25,7 +25,7 @@ jobs:
           name: prepare backbround server
           command: |
             echo "AUTH0_DOMAIN=$domain" >> .env
-             echo "AUDIENCE=$audience" >> .env
+             echo "AUTH0_AUDIENCE=$audience" >> .env
              echo "CLIENT_ID_1=$id1" >> .env
              echo "CLIENT_SECRET_1=$secret1" >> .env
              echo "CLIENT_ID_2=$id2" >> .env
