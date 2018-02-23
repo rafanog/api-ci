@@ -17,5 +17,5 @@ jobs:
       - run:
           name: Execute dockerized version
           command: sh exec.sh
-          background
+          #background: true
       
