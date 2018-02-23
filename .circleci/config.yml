@@ -24,18 +24,25 @@ jobs:
       - run:
           name: prepare backbround server
           command: |
-            echo "AUTH0_DOMAIN=$domain" 
-            #>> .env
-            # echo "$audience" >> .env
-            # echo ""
+            echo "AUTH0_DOMAIN=$domain" >> .env
+             echo "AUDIENCE=$audience" >> .env
+             echo "CLIENT_ID_1=$id1" >> .env
+             echo "CLIENT_SECRET_1=$secret1" >> .env
+             echo "CLIENT_ID_2=$id2" >> .env
+             echo "CLIENT_SECRET_2=$secret2" >> .env
+             echo "CLIENT_ID_3=$id3" >> .env
+             echo "CLIENT_SECRET_3=$secret3" >> .env
+             echo "CLIENT_ID_4=$id4" >> .env
+             echo "CLIENT_SECRET_4=$secret4" >> .env
+             echo "API_URL=url" >> .env
            
-      #- run: 
-      #    name: background server for tests
-      #    command: npm start 
-      #    background: true
+      - run: 
+          name: background server for tests
+          command: npm start 
+          background: true
       
-      #- run: sleep 7
+      - run: sleep 7
       
-      #- run: 
-      #    name: test
-      #    command: npm test
+      - run: 
+          name: test
+          command: npm test
