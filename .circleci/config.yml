@@ -7,11 +7,15 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      
+      - run: 
+          name: Prepare .env variables for server
+          command: |
+            echo "AUTH0_DOMAIN=$domain" >> .env
+            echo "AUTH_AUDIENCE=$audience" >> .env
+         
       - run:
-          name: Build docker image
-          command: docker build -t auth0-express-api-rs256 .
-          
-      - run:
-          name: Run image
-          command: docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256
+          name: Execute dockerized version
+          command: sh exec.sh
+          background
       
