@@ -23,7 +23,7 @@ jobs:
       
       - run:
           name: prepare backbround server
-          command: echo "$domain"
+          command: echo "$id1"
             # echo "$domain" >> .env
             # echo "$audience" >> .env
            
