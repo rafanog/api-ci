@@ -28,6 +28,6 @@ jobs:
       
       - run: sleep 7
       
-      - run: 
-          name: test
-          command: npm test
+      #- run: 
+      #    name: test
+      #    command: npm test
