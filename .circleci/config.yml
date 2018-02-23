@@ -1,48 +1,17 @@
 version: 2
 jobs:
   build:
+    working_directory: /app
     docker:
-      - image: circleci/node:9.4.0
-      
-    working_directory: ~/repo
-
+      - image: circleci/node: 9.4.0
     steps:
       - checkout
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run: npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      - setup_remote_docker
+      - run:
+          name: Build docker image
+          command: docker build -t auth0-express-api-rs256 .
+          
+      - run:
+          name: Run image
+          command: docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256
       
-      #- run:
-      #    name: prepare backbround server
-      #    command: |
-      #       echo "AUTH0_DOMAIN=$domain" >> .env
-      #       echo "AUTH0_AUDIENCE=$audience" >> .env
-      #       echo "AUTH0_CLIENT_ID_1=$id1" >> .env
-      #       echo "AUTH0_CLIENT_SECRET_1=$secret1" >> .env
-      #       echo "AUTH0_CLIENT_ID_2=$id2" >> .env
-      #       echo "AUTH0_CLIENT_SECRET_2=$secret2" >> .env
-      #       echo "AUTH0_CLIENT_ID_3=$id3" >> .env
-      #       echo "AUTH0_CLIENT_SECRET_3=$secret3" >> .env
-      #       echo "AUTH0_CLIENT_ID_4=$id4" >> .env
-      #       echo "AUTH0_CLIENT_SECRET_4=$secret4" >> .env
-      #       echo "API_URL=http://localhost:3010" >> .env
-           
-      #- run: 
-      #    name: background server for tests
-      #    command: npm start 
-      #    background: true
-      
-      #- run: sleep 7
-      
-      #- run: 
-      #    name: test
-      #    command: npm test
