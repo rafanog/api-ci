@@ -23,7 +23,7 @@ jobs:
       
       - run:
           name: prepare backbround server
-          command: echo AUTH0_DOMAIN
+          command: echo $AUTH0_DOMAIN
             # echo AUTH0_DOMAIN=rntest0116.auth0.com >> .env
             # echo AUTH0_AUDIENCE=https://localhost:3001/api >> .env
             
