@@ -1,13 +1,3 @@
-## Getting Started
-
-If you haven't already done so, [sign up](https://auth0.com) for your free Auth0 account and create a new client in the [dashboard](https://manage.auth0.com).
-
-Clone the repo or download it from the Express API quickstart page in Auth0's documentation.
-
-## Setup the `.env` File
-
-If you download this sample from the Express API quickstart page, a `.env` file will come pre-populated with your API identifier and Auth0 domain. If you clone the repo from GitHub, you will need to rename `.env.example` to `.env` and provide these values manually.
-
 ## Install the Dependencies and Start the API
 
 ```bash
