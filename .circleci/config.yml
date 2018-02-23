@@ -23,14 +23,14 @@ jobs:
       
       - run:
           name: prepare backbround server
-          command: echo "{AUTH0_DOMAIN}"
+          command: echo "$domain"
             # echo AUTH0_DOMAIN=rntest0116.auth0.com >> .env
             # echo AUTH0_AUDIENCE=https://localhost:3001/api >> .env
-      #      
-      #- run: 
-      #    name: background server for tests
-      #    command: npm start 
-      #    background: true
+           
+      - run: 
+          name: background server for tests
+          command: npm start 
+          background: true
       
       #- run: sleep 7
       
