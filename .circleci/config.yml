@@ -34,7 +34,7 @@ jobs:
              echo "AUTH0_CLIENT_SECRET_3=$secret3" >> .env
              echo "AUTH0_CLIENT_ID_4=$id4" >> .env
              echo "AUTH0_CLIENT_SECRET_4=$secret4" >> .env
-             echo "API_URL=url" >> .env
+             echo "API_URL=http://localhost:3010" >> .env
            
       - run: 
           name: background server for tests
