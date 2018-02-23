@@ -23,9 +23,11 @@ jobs:
       
       - run:
           name: prepare backbround server
-          command: echo "$id1"
-            # echo "$domain" >> .env
+          command: |
+            echo "AUTH0_DOMAIN=$domain" 
+            #>> .env
             # echo "$audience" >> .env
+            # echo ""
            
       #- run: 
       #    name: background server for tests
