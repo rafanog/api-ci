@@ -26,7 +26,7 @@ jobs:
           command: echo "{AUTH0_DOMAIN}"
             # echo AUTH0_DOMAIN=rntest0116.auth0.com >> .env
             # echo AUTH0_AUDIENCE=https://localhost:3001/api >> .env
-            
+      #      
       #- run: 
       #    name: background server for tests
       #    command: npm start 
