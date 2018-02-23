@@ -5,6 +5,7 @@ node_js:
 install:
   - npm install
 before_script:
+  - echo AUTH0_DOMAIN
   - npm start & sleep 7
 script:
   - npm test
