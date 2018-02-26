@@ -4,7 +4,6 @@ jobs:
     working_directory: ~/repo
     machine:
       - circleci/classic:edge
-      
      steps:
       - checkout
       - restore_cache:
