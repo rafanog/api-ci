@@ -24,20 +24,22 @@ jobs:
       - run: 
           name: test
           command: |
-            cd test 
-            npm install
-            echo "AUTH0_DOMAIN=$domain" >> .env
-            echo "AUTH0_AUDIENCE=$audience" >> .env
-            echo "AUTH0_CLIENT_ID_1=$id1" >> .env
-            echo "AUTH0_CLIENT_SECRET_1=$secret1" >> .env
-            echo "AUTH0_CLIENT_ID_2=$id2" >> .env
-            echo "AUTH0_CLIENT_SECRET_2=$secret2" >> .env
-            echo "AUTH0_CLIENT_ID_3=$id3" >> .env
-            echo "AUTH0_CLIENT_SECRET_3=$secret3" >> .env
-            echo "AUTH0_CLIENT_ID_4=$id4" >> .env
-            echo "AUTH0_CLIENT_SECRET_4=$secret4" >> .env
-            echo "API_URL=http://localhost:3010" >> .env
-            npm test
+            ls
+            
+            #cd test 
+            #npm install
+            #echo "AUTH0_DOMAIN=$domain" >> .env
+            #echo "AUTH0_AUDIENCE=$audience" >> .env
+            #echo "AUTH0_CLIENT_ID_1=$id1" >> .env
+            #echo "AUTH0_CLIENT_SECRET_1=$secret1" >> .env
+            #echo "AUTH0_CLIENT_ID_2=$id2" >> .env
+            #echo "AUTH0_CLIENT_SECRET_2=$secret2" >> .env
+            #echo "AUTH0_CLIENT_ID_3=$id3" >> .env
+            #echo "AUTH0_CLIENT_SECRET_3=$secret3" >> .env
+            #echo "AUTH0_CLIENT_ID_4=$id4" >> .env
+            #echo "AUTH0_CLIENT_SECRET_4=$secret4" >> .env
+            #echo "API_URL=http://localhost:3010" >> .env
+            #npm test
             
           
       
