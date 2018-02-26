@@ -22,6 +22,7 @@ jobs:
           background: true
       
       - run: sleep 120
+      - run: curl -i http://localhost:3010/api/public
       
       # - run:
       #    name: Prepare and execute tests
@@ -40,4 +41,4 @@ jobs:
       #      echo "API_URL=http://localhost:3010" >> .env
       #      npm install && npm test
       
-      - run: curl -i http://localhost:3010/api/public
+      
