@@ -27,6 +27,7 @@ jobs:
           name: test
           command: |
             cd test
+            npm install
             npm test
             #apt-get install nodejs
             #apt-get install npm
