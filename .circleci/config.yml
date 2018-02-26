@@ -2,8 +2,9 @@ version: 2
 jobs:
   build:
     working_directory: ~/repo
-    machine:
-      - circleci/classic:edge
+    machine: true
+      - circleci/classic:latest
+      
      steps:
       - checkout
       - restore_cache:
