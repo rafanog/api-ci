@@ -17,10 +17,5 @@
     "express-jwt": "^5.1.0",
     "express-jwt-authz": "^1.0.0",
     "jwks-rsa": "^1.1.1"
-  },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "chai-http": "^2.0.1",
-    "mocha": "^4.1.0"
   }
 }
