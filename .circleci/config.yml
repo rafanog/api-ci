@@ -25,8 +25,9 @@ jobs:
           name: test
           command: |
             cd test 
-            apt-get install nodejs
-            apt-get install npm
+            node -v
+            #apt-get install nodejs
+            #apt-get install npm
             #echo "AUTH0_DOMAIN=$domain" >> .env
             #echo "AUTH0_AUDIENCE=$audience" >> .env
             #echo "AUTH0_CLIENT_ID_1=$id1" >> .env
