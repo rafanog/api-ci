@@ -21,8 +21,8 @@ jobs:
           command: sh exec.sh 
           background: true
       
-      - run: sleep 60
-      - run: curl -i localhost:3010/api/public
+      - run: sleep 30
+      - run: curl -i http://google.co.ve
       
       # - run:
       #    name: Prepare and execute tests
