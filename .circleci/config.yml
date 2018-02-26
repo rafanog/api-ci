@@ -21,7 +21,7 @@ jobs:
           command: sh exec.sh 
           background: true
       
-      - run: sleep 30
+      - run: sleep 120
       
       # - run:
       #    name: Prepare and execute tests
