@@ -20,7 +20,7 @@ jobs:
           command: sh exec.sh 
           background: true
       
-      - run: sleep 7
+      - run: sleep 10
       
       - run: 
           name: test
