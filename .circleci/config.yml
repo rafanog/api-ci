@@ -3,27 +3,19 @@ jobs:
   build:
     working_directory: ~/repo
     machine:
-      - image: circleci/node:9.4.0
-      - image: docker:17.05.0-ce-git
+      - circleci/classic:edge
       
-    steps:
+     steps:
       - checkout
-      - setup_remote_docker
-      
-      - run:
-          name: prepare backbround server
-          command: |
-             echo "AUTH0_DOMAIN=$domain" >> .env
-             echo "AUTH0_AUDIENCE=$audience" >> .env
-           
-      - run: 
-          name: build docker image
-          command: docker build -t auth0-express-api-rs256 .
-      
-      - run: 
-          name: run background server
-          command: docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256
-          background: true
-      
-      - run: sleep 15
-      - run: curl -i http://localhost:3010/api/public 
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
