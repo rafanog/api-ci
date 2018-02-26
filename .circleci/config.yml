@@ -22,7 +22,6 @@ jobs:
           background: true
       
       - run: sleep 60
-      - run: docker-machine ip
       - run: curl -i http://192.168.99.100:3010/api/public
       
       # - run:
