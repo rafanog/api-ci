@@ -10,20 +10,16 @@ jobs:
       - checkout
       - setup_remote_docker
       
-      - run: 
-          name: check
-          command: node -v
-      
-      #- run:
-      #    name: prepare backbround server
-      #    command: |
-      #       echo "AUTH0_DOMAIN=$domain" >> .env
-      #       echo "AUTH0_AUDIENCE=$audience" >> .env
+      - run:
+          name: prepare backbround server
+          command: |
+             echo "AUTH0_DOMAIN=$domain" >> .env
+             echo "AUTH0_AUDIENCE=$audience" >> .env
            
-      #- run: 
-      #    name: background server for tests
-      #    command: sh exec.sh 
-      #    background: true
+      - run: 
+          name: background server for tests
+          command: sh exec.sh 
+          background: true
       
       #- run: sleep 10
       
