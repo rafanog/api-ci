@@ -21,7 +21,7 @@ jobs:
           command: sh exec.sh 
           background: true
       
-      - run: sleep 90
+      - run: sleep 60
       - run: curl -i http://192.168.99.100:3010/api/public
       
       # - run:
