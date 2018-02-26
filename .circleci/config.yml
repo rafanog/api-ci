@@ -21,8 +21,8 @@ jobs:
           command: sh exec.sh 
           background: true
       
-      - run: sleep 120
-      - run: curl -i http://localhost:3010/api/public
+      - run: sleep 90
+      - run: curl -i http://192.168.99.100:3010/api/public
       
       # - run:
       #    name: Prepare and execute tests
