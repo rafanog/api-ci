@@ -26,6 +26,7 @@ jobs:
       - run:
           name: Prepare and execute tests
           command: |
+            cd test
             echo "AUTH0_DOMAIN=$domain" >> .env
             echo "AUTH0_AUDIENCE=$audience" >> .env
             echo "AUTH0_CLIENT_ID_1=$id1" >> .env
