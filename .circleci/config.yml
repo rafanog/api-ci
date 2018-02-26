@@ -24,12 +24,12 @@ jobs:
       - run: sleep 10
       
       - run: 
-          name: Prepare and execute tests
+          name: Prepare test dependencies
           command: |
             cd test
             npm install
-            apt-get install nodejs
-            apt-get install npm
+      - run:
+          name: Set test's credentials
             echo "AUTH0_DOMAIN=$domain" >> .env
             echo "AUTH0_AUDIENCE=$audience" >> .env
             echo "AUTH0_CLIENT_ID_1=$id1" >> .env
@@ -41,4 +41,6 @@ jobs:
             echo "AUTH0_CLIENT_ID_4=$id4" >> .env
             echo "AUTH0_CLIENT_SECRET_4=$secret4" >> .env
             echo "API_URL=http://localhost:3010" >> .env
-            npm test
+      - run:
+          name: execute tests  
+          command: npm test
