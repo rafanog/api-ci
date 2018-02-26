@@ -9,25 +9,23 @@ jobs:
       - checkout
       - setup_remote_docker
       
-      - run:
-          name: prepare backbround server
-          command: |
-             echo "AUTH0_DOMAIN=$domain" >> .env
-             echo "AUTH0_AUDIENCE=$audience" >> .env
+      #- run:
+      #    name: prepare backbround server
+      #    command: |
+      #       echo "AUTH0_DOMAIN=$domain" >> .env
+      #       echo "AUTH0_AUDIENCE=$audience" >> .env
            
-      - run: 
-          name: background server for tests
-          command: sh exec.sh 
-          background: true
+      #- run: 
+      #    name: background server for tests
+      #    command: sh exec.sh 
+      #    background: true
       
-      - run: sleep 10
+      #- run: sleep 10
       
-      - run: 
-          name: test
-          command: |
-            cd test
-            npm -v
-            node -v
+      #- run: 
+      #    name: test
+      #    command: |
+      #      cd test
             #apt-get install nodejs
             #apt-get install npm
             #echo "AUTH0_DOMAIN=$domain" >> .env
@@ -41,7 +39,7 @@ jobs:
             #echo "AUTH0_CLIENT_ID_4=$id4" >> .env
             #echo "AUTH0_CLIENT_SECRET_4=$secret4" >> .env
             #echo "API_URL=http://localhost:3010" >> .env
-            npm test
+      #      npm test
             
           
       
