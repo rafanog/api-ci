@@ -20,4 +20,7 @@ jobs:
           name: build docker image
           command: docker build -t auth0-express-api-rs256 .
       
-      - run: docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256
+      - run: 
+          name: run background server
+          command: docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256
+          background: true
