@@ -5,8 +5,12 @@ node_js:
 install:
   - npm install
 before_script:
-  - echo "$domain"
+
+  - echo "AUTH0_DOMAIN=$domain" >> .env
+  - echo "AUTH0_AUDIENCE=$audience" >> .env
+  - ls
   - npm start & sleep 7
+  
 script:
   - cd test && npm install
   - npm test
