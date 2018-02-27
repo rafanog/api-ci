@@ -8,4 +8,5 @@ before_script:
   - echo "DOMAIN"
   - npm start & sleep 7
 script:
+  - cd test && npm install
   - npm test
