@@ -8,7 +8,7 @@ before_script:
   - cp .env.example .env
   - sed 's/AUTH0_DOMAIN={DOMAIN}/AUTH0_DOMAIN=$domain/' .env
   - sed 's/AUTH0_AUDIENCE={AUDIENCE}/AUTH0_AUDIENCE=$audience/' .env
-  - npm start & sleep 7
+  #- npm start & sleep 7
 script:
   - cd test
   - ls
