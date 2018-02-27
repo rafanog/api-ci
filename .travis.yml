@@ -6,7 +6,7 @@ install:
   - npm install
 before_script:
 
-  - echo "AUTH0_DOMAIN=$domain\nAUTH0_AUDIENCE=$audience" >> .env && npm start & sleep 7
+  - echo "AUTH0_DOMAIN=$domain\nAUTH0_AUDIENCE=$audience" >> .env && ls && npm start & sleep 7
   
 script:
   - cd test && npm install
