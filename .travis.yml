@@ -6,8 +6,8 @@ install:
   - npm install
 before_script:
   - cp .env.example .env
-  - sed "/AUTH0_DOMAIN={DOMAIN}/AUTH0_DOMAIN=$domain/" .env
-  - sed "/AUTH0_AUDIENCE={API_AUDIENCE}/AUTH0_AUDIENCE=$audience/" .env
+  - sed 's/AUTH0_DOMAIN={DOMAIN}/AUTH0_DOMAIN="$domain"/' .env
+  #- sed "/AUTH0_AUDIENCE={API_AUDIENCE}/AUTH0_AUDIENCE=$audience/" .env
   #- npm start & sleep 7
 script:
   - cd test
