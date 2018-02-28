@@ -19,17 +19,17 @@ jobs:
       - run: docker build -t auth0-express-api-rs256 .
       - run: 
            name: background server
-           command: |
-              docker run --name rafa-test --env-file .env -p 3010:3010 -it auth0-express-api-rs256 && sleep 10
-              docker exec rafatest curl -i http://localhost:3010/api/public
+           command: docker run --name rafa-test --env-file .env -p 3010:3010 -it auth0-express-api-rs256 
            background: true
       
       - run: sleep 10
            
-      #- run: docker ps
-      #- run: 
-      #    name: inspections
-      #    command: docker inspect --format '{{ .NetworkSettings.IPAddress }}' rafa-test
+      - run: docker ps
+      - run: 
+          name: inspections
+          command: docker inspect --format '{{ .NetworkSettings.IPAddress }}' rafa-test
+      
+      - run: docker port rafa-test
               
 
       #- run: curl -i http://172.17.0.2:3010/api/public
