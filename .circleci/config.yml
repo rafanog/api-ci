@@ -25,8 +25,7 @@ jobs:
       - run: docker ps
       - run: 
           name: inspections
-          command: |
-              SAMPLE='$(docker ps -aqf "name=rafa-test")'
-              echo "${SAMPLE}"
+          command: docker inspect docker ps -aqf "name=rafa-test"
+              
 
       - run: docker exec rafa-test curl -i http://localhost:3010/api/public
