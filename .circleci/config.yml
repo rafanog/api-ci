@@ -20,6 +20,8 @@ jobs:
           name: background server for tests
           command: sh exec.sh 
           background: true
+          
+      - run: ps aux
       
       - run: sleep 15
       - run: curl -i http://35.231.98.234:3010/api/public
