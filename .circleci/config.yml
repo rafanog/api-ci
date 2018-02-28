@@ -22,10 +22,9 @@ jobs:
            background: true
            
       - run: sleep 15
-      - run: docker ps
       - run: 
           name: inspections
           command: |
-              docker ps -a
+              docker ps -aqf "name=rafa-test"
 
       - run: docker exec rafa-test curl -i http://localhost:3010/api/public
