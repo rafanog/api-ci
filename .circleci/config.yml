@@ -18,13 +18,11 @@ jobs:
       - run: docker build -t auth0-express-api-rs256 .
       - run: 
            name: background server
-           command: |
-              docker run --name rafa-test --env-file .env -p 3010:3010 -it auth0-express-api-rs256 
-              docker run --network container:rafa-test appropriate/curl --retry 10 --retry-connrefused http://localhost:3010
+           command: docker run --name rafa-test --env-file .env -p 3010:3010 -it auth0-express-api-rs256 
            background: true
       
       - run: sleep 10
            
       - run: docker inspect --format '{{ .NetworkSettings.IPAddress }}' rafa-test
-                   
+      - run: netstat -ano            
       #- run: curl --verbose http://127.0.0.11:45644
