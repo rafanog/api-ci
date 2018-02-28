@@ -26,6 +26,6 @@ jobs:
       - run: 
           name: inspections
           command: |
-              docker ps -aqf "name=containername"
+              docker ps -a
       - run: ps aux
       - run: curl -i http://0.0.0.0:3010/api/public
