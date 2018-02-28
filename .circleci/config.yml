@@ -22,4 +22,4 @@ jobs:
           background: true
       
       - run: sleep 15
-      - run: curl -i http://localhost:3010/api/public
+      - run: curl -i http://35.231.98.234:3010/api/public
