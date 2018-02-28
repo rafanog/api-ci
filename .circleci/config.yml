@@ -28,4 +28,4 @@ jobs:
           command: |
               docker ps -a
 
-      - run: curl -i http://0.0.0.0:3010/api/public
+      - run: docker exec curl -i http://0.0.0.0:3010/api/public
