@@ -23,4 +23,4 @@ jobs:
            
       - run: docker inspect --format '{{ .NetworkSettings.IPAddress }}' rafa-test
       - run: netstat -ano            
-      #- run: curl --verbose http://127.0.0.11:45644
+      - run: curl --verbose http://localhost:3010/api/public
