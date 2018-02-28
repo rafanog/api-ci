@@ -4,24 +4,10 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: docker:17.05.0-ce-git
-      - image: circleci/node:9.4.0
+      #- image: circleci/node:9.4.0
       
     steps:
       - checkout
       - setup_remote_docker
       
-      - run:
-          name: prepare backbround server
-          command: |
-             echo "AUTH0_DOMAIN=$domain" >> .env
-             echo "AUTH0_AUDIENCE=$audience" >> .env
-          
-      - run: 
-          name: background server for tests
-          command: sh exec.sh 
-          background: true
-          
-      - run: ps aux
-      
-      - run: sleep 15
-      - run: curl -i http://35.231.98.234:3010/api/public
+      - run: docker-machine ip
