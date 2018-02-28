@@ -26,8 +26,8 @@ jobs:
       - run: docker ps
       - run: 
           name: inspections
-          command: docker inspect --format='{{range $p, $conf := .NetworkSettings.Ports}} {{$p}} -> {{(index $conf 0).HostPort}} {{end}}' rafa-test
+          command: docker inspect --format '{{ .NetworkSettings.IPAddress }}' rafa-test
       
-      - run: netstat -an | grep 3010
+      #- run: netstat -an | grep 3010
               
-      - run: curl --verbose http://localhost:3010/api/public
+      #- run: curl --verbose http://localhost:3010/api/public
