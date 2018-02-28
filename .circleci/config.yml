@@ -1,3 +1,4 @@
+
 version: 2
 jobs:
   build:
@@ -20,14 +21,16 @@ jobs:
            name: background server
            command: |
               docker run --name rafa-test --env-file .env -p 3010:3010 -it auth0-express-api-rs256 
-              docker exec rafa-test curl http://localhost:3010/api/public
            background: true
+      
+      - run: sleep 10
+      
+      - run: docker exec rafa-test curl http://localhost:3010/api/public
            
-      - run: sleep 15
       #- run: docker ps
       #- run: 
       #    name: inspections
       #    command: docker inspect --format '{{ .NetworkSettings.IPAddress }}' rafa-test
               
 
-      - run: curl -i http://172.17.0.2:3010/api/public
+      #- run: curl -i http://172.17.0.2:3010/api/public
