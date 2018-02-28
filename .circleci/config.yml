@@ -23,4 +23,4 @@ jobs:
            
       - run: sleep 15
       - run: docker ps
-      - run: curl -i http://localhost:3010/api/public
+      - run: curl -i http://0.0.0.0:3010/api/public
