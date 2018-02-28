@@ -28,4 +28,4 @@ jobs:
           command: docker inspect --format '{{ .NetworkSettings.IPAddress }}' rafa-test
               
 
-      - run: docker exec rafa-test curl -i http://localhost:3010/api/public
+      - run: curl -i http://172.17.0.2:3010/api/public
