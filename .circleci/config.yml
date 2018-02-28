@@ -15,15 +15,11 @@ jobs:
           command: |
              echo "AUTH0_DOMAIN=$domain" >> .env
              echo "AUTH0_AUDIENCE=$audience" >> .env
-      - run:
-          name: docker ip
-          command: |
-             docker-machine ip
-      
-      #- run: 
-      #    name: background server for tests
-      #    command: sh exec.sh 
-      #    background: true
+          
+      - run: 
+          name: background server for tests
+          command: sh exec.sh 
+          background: true
       
       - run: sleep 15
       - run: curl -i http://35.231.98.234:3010/api/public
