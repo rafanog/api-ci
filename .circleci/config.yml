@@ -18,7 +18,7 @@ jobs:
       - run: docker build -t auth0-express-api-rs256 .
       - run: 
            name: background server
-           command: docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256
+           command: docker run --env-file .env -p 3010:3010 -it auth0-express-api-rs256 --name rafa-test
            background: true
            
       - run: sleep 15
@@ -28,4 +28,4 @@ jobs:
           command: |
               docker ps -a
 
-      - run: docker exec auth0-express-api-rs256 curl -i http://localhost:3010/api/public
+      - run: docker rafa-test curl -i http://localhost:3010/api/public
