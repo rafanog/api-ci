@@ -20,8 +20,7 @@ jobs:
       - run: 
            name: background server
            command: |
-              docker run --name rafa-test --env-file .env -p 3010:3010 -it auth0-express-api-rs256 
-              sleep 10
+              docker run --name rafa-test --env-file .env -p 3010:3010 -it auth0-express-api-rs256 && sleep 10
               docker exec rafatest curl -i http://localhost:3010/api/public
            background: true
       
