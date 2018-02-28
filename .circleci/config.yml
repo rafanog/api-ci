@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: circleci/node:9.4.0
-      - image: docker:17.05.0-ce-git
+      #- image: docker:17.05.0-ce-git
       
     steps:
       - checkout
@@ -23,5 +23,9 @@ jobs:
            
       - run: sleep 15
       - run: docker ps
+      - run: 
+          name: inspections
+          command: |
+              docker ps -aqf "name=containername" && echo "$name"
       - run: ps aux
       - run: curl -i http://0.0.0.0:3010/api/public
