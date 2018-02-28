@@ -28,4 +28,4 @@ jobs:
           command: |
               docker ps -a
 
-      - run: docker rafa-test curl -i http://localhost:3010/api/public
+      - run: docker exec rafa-test curl -i http://localhost:3010/api/public
