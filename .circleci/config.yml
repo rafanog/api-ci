@@ -28,6 +28,6 @@ jobs:
           name: inspections
           command: docker inspect --format '{{ .NetworkSettings.IPAddress }}' rafa-test
       
-      #- run: netstat -an | grep 3010
+      - run: netstat -an
               
       - run: curl --verbose http://172.17.0.2:3010/api/public
