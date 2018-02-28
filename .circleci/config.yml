@@ -20,7 +20,7 @@ jobs:
            background: true
       
       - run: sleep 10
-           
-      - run: docker inspect --format '{{ .NetworkSettings.IPAddress }}' rafa-test
-      - run: netstat -ano            
-      - run: curl --verbose http://localhost:3010/api/public
+                      
+      - run: 
+          name: Test if API is online
+          command: curl -i http://localhost:3010/api/public
