@@ -25,7 +25,7 @@ jobs:
       - run: docker ps
       - run: 
           name: inspections
-          command: docker inspect (docker ps -aqf "name=rafa-test")
+          command: docker inspect --format '{{ .NetworkSettings.IPAddress }}' rafa-test
               
 
       - run: docker exec rafa-test curl -i http://localhost:3010/api/public
