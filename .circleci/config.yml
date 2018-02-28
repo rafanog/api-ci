@@ -1,58 +1,25 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/repo
     docker:
       - image: circleci/node:9.4.0
+      - image: docker:17.05.0-ce-git
       
-    working_directory: ~/repo
-
     steps:
       - checkout
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run: npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      - setup_remote_docker
       
       - run:
-          name: set background server credentials's
+          name: prepare backbround server
           command: |
              echo "AUTH0_DOMAIN=$domain" >> .env
              echo "AUTH0_AUDIENCE=$audience" >> .env
+           
       - run: 
           name: background server for tests
-          command: npm start 
+          command: sh exec.sh 
           background: true
-          
-      - run: sleep 7
-      - run: ls
       
-      - run:
-          name: set credentials for unitary tests
-          command: |
-            cd test
-            echo "AUTH0_DOMAIN=$domain" >> .env
-            echo "AUTH0_AUDIENCE=$audience" >> .env
-            echo "AUTH0_CLIENT_ID_1=$id1" >> .env
-            echo "AUTH0_CLIENT_SECRET_1=$secret1" >> .env
-            echo "AUTH0_CLIENT_ID_2=$id2" >> .env
-            echo "AUTH0_CLIENT_SECRET_2=$secret2" >> .env
-            echo "AUTH0_CLIENT_ID_3=$id3" >> .env
-            echo "AUTH0_CLIENT_SECRET_3=$secret3" >> .env
-            echo "AUTH0_CLIENT_ID_4=$id4" >> .env
-            echo "AUTH0_CLIENT_SECRET_4=$secret4" >> .env
-            echo "API_URL=http://localhost:3010" >> .env
-          
-      - run:
-          name: test
-          command: |
-            cd test
-            npm install
-            npm test
+      - run: sleep 15
+      - run: curl -i http://localhost:3010/api/public
