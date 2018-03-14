@@ -42,7 +42,8 @@ jobs:
       
       - run:
           name: Install test script dependency
-          command: cd test && npm install && npm install asyncawait
+          command: cd test && npm install
+          #command: cd test && npm install && npm install asyncawait
       - run:
           name: Test
           command: cd test && npm test
